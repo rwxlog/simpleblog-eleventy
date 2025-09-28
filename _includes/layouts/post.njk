@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+<main class="container main single-post">
+  <article>
+    <h1>{{ title }}</h1>
+    <p class="meta">
+      {{ date | date("MMM d, yyyy") }} · {{ content | readingTime }}
+    </p>
+
+    <div class="content">
+      {{ content | safe }}
+    </div>
+
+    <!-- Navigation -->
+    <nav class="post-nav">
+      {% if collections.posts | getPrevious(page) %}
+        <a class="prev" href="{{ (collections.posts | getPrevious(page)).url }}">← Previous</a>
+      {% endif %}
+
+      <a class="home" href="{{ '/posts/' | url }}">All posts</a>
+
+      {% if collections.posts | getNext(page) %}
+        <a class="next" href="{{ (collections.posts | getNext(page)).url }}">Next →</a>
+      {% endif %}
+    </nav>
+
+    <p><a href="#top" class="back-to-top">Back to top</a></p>
+  </article>
+</main>

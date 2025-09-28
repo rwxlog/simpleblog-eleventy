@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# Eleventy output folder
+_site/
+
+# system files
+.DS_Store
+
+# optional: logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

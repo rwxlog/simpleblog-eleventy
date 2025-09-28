@@ -1,0 +1,72 @@
+---
+layout: base.njk
+---
+
+<main class="container main">
+
+  <!-- Faith section -->
+  <section class="home-section">
+    <div class="section-head">
+      <h2>Faith</h2>
+      <a class="view-all" href="{{ '/categories/faith/' | url }}">View all →</a>
+    </div>
+
+    <div class="post-grid" id="faith-posts">
+      {% set faithPosts = collections.posts | filterByCategory("faith") | slice(0,3) %}
+      {% for post in faithPosts %}
+      <article class="card">
+        <h2 class="card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p class="meta">
+          {{ post.date | date("MMM d, yyyy") }} · {{ post.templateContent | readingTime }}
+        </p>
+        <p class="excerpt">{{ post.data.short_summary }}</p>
+        <a class="read-more" href="{{ post.url }}">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Social section -->
+  <section class="home-section">
+    <div class="section-head">
+      <h2>Social</h2>
+      <a class="view-all" href="{{ '/categories/social/' | url }}">View all →</a>
+    </div>
+
+    <div class="post-grid" id="social-posts">
+      {% set socialPosts = collections.posts | filterByCategory("social") | slice(0,3) %}
+      {% for post in socialPosts %}
+      <article class="card">
+        <h2 class="card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p class="meta">
+          {{ post.date | date("MMM d, yyyy") }} · {{ post.templateContent | readingTime }}
+        </p>
+        <p class="excerpt">{{ post.data.short_summary }}</p>
+        <a class="read-more" href="{{ post.url }}">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Worldview section -->
+  <section class="home-section">
+    <div class="section-head">
+      <h2>Worldview</h2>
+      <a class="view-all" href="{{ '/categories/worldview/' | url }}">View all →</a>
+    </div>
+
+    <div class="post-grid" id="worldview-posts">
+      {% set worldviewPosts = collections.posts | filterByCategory("worldview") | slice(0,3) %}
+      {% for post in worldviewPosts %}
+      <article class="card">
+        <h2 class="card-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p class="meta">
+          {{ post.date | date("MMM d, yyyy") }} · {{ post.templateContent | readingTime }}
+        </p>
+        <p class="excerpt">{{ post.data.short_summary }}</p>
+        <a class="read-more" href="{{ post.url }}">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

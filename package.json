@@ -1,0 +1,16 @@
+{
+  "name": "simpleblog-eleventy",
+  "version": "1.0.0",
+  "description": "My Eleventy blog",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
