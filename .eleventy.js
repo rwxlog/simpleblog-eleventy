@@ -71,7 +71,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: "",        // put your templates in ./src
+      input: "",        // put your templates in this directory
       includes: "_includes", // layouts and partials
       layouts: "_includes/layouts", // explicit layouts folder
       output: "_site"      // output folder
